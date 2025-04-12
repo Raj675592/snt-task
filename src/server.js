@@ -70,13 +70,13 @@ app.post('/user', async (req, res) => {
 
 app.post('/feedback', async (req, res) => {
   try {
-    const { name, email, rollno, feedback, rating, isAnonymous } = req.body;
+    const { name, email, rollno, feedback, rating } = req.body;
 
     if (!name || !email || !rollno || !feedback || !rating) {
       return res.status(400).json({ error: 'All fields are required' });
     }
 
-    const newFeedback = new Feedback({ name, email, rollno, feedback, rating, isAnonymous });
+    const newFeedback = new Feedback({ name, email, rollno, feedback, rating });
     await newFeedback.save();
 
     res.status(201).json({ message: 'Feedback submitted successfully', feedback: newFeedback });
@@ -89,4 +89,3 @@ app.post('/feedback', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-

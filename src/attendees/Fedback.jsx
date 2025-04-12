@@ -20,7 +20,8 @@ function Feedback() {
       };
 
       try {
-        const response = await fetch('http://localhost:5500/feedback', {
+        // const response = await fetch('http://localhost:5500/feedback', {
+          const response = await fetch('https://snt-task-2.onrender.com/api/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(feedbackData),
