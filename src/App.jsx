@@ -6,13 +6,13 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import FAQs from './FAQs.jsx';
 
 import Login from './UserProfile.jsx';
-import image from './imagecopy.png';
+
 
 function App(){
     return(
        
         <div className="Appp">
-            <img src={image} alt="background" className="bg-img" />
+
             <Router>
             <nav className="navbar">
              <Link to="/user">Attendee</Link>
