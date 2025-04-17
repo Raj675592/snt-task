@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, enum: ['attendee', 'organizer'], required: true },
-  code: { type: String },
+  
 });
 
 const User = mongoose.model('User', userSchema);
@@ -52,11 +52,11 @@ app.get('/', (req, res) => {
 
 app.post('/user', async (req, res) => {
   try {
-    const { name, email, password, role, code } = req.body;
+    const { name, email, password, role } = req.body;
 
     
 
-    const user = new User({ name, email, password, role, code });
+    const user = new User({ name, email, password, role });
     await user.save();
 
     res.status(201).json({ message: 'User registered successfully', user });
