@@ -54,9 +54,7 @@ app.post('/user', async (req, res) => {
   try {
     const { name, email, password, role, code } = req.body;
 
-    if (!name || !email || !password || !role) {
-      return res.status(400).json({ error: 'All fields are required' });
-    }
+    
 
     const user = new User({ name, email, password, role, code });
     await user.save();
@@ -72,9 +70,7 @@ app.post('/feedback', async (req, res) => {
   try {
     const { name, email, rollno, feedback, rating } = req.body;
 
-    if (!name || !email || !rollno || !feedback || !rating) {
-      return res.status(400).json({ error: 'All fields are required' });
-    }
+   
 
     const newFeedback = new Feedback({ name, email, rollno, feedback, rating });
     await newFeedback.save();
