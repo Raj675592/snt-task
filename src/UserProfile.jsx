@@ -12,10 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    if (!name.trim() || !email.trim() || !password.trim() || !confirmPassword.trim() || !role.trim() || (role === 'organizer' && !code.trim())) {
-      alert('Please fill all the fields');
-      return;
-    }
+   
 
     if (role === 'organizer' && code !== '1234') {
       alert('Invalid code for organizer role');
