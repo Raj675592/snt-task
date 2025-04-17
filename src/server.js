@@ -68,7 +68,7 @@ app.post('/user', async (req, res) => {
 
 app.post('/feedback', async (req, res) => {
   try {
-    const { name, email, rollno, feedback, rating } = req.body;
+    const { name, email, feedback, rating } = req.body;
 
    
 
