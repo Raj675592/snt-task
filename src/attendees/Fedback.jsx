@@ -5,7 +5,7 @@ function Feedback() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [rating, setRating] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const [feedback, setFeedback] = useState('Hi, I am ');
 
   const feedbackSubmitted = async (e) => {
     e.preventDefault();
